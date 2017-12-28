@@ -1,0 +1,12 @@
+diff --git a/profiles/input/hog.c b/profiles/input/hog.c
+index 23c9c1529..d0b037a82 100644
+--- a/profiles/input/hog.c
++++ b/profiles/input/hog.c
+@@ -213,6 +213,7 @@ static struct btd_profile hog_profile = {
+ 	.accept		= hog_accept,
+ 	.disconnect	= hog_disconnect,
+ 	.auto_connect	= true,
++  .external = true,
+ };
+ 
+ static int hog_init(void)

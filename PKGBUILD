@@ -2,7 +2,7 @@
 # Maintainer: Swift Geek
 pkgname=bluez-git
 _pkgname=bluez
-pkgver=5.45.r17.gd6c07ecf2
+pkgver=5.48.r0.g0d1e3b9c5
 pkgrel=1
 epoch=1
 pkgdesc="Libraries and tools for the Bluetooth protocol stack"
@@ -31,9 +31,11 @@ provides=($_pkgname
 backup=('etc/bluetooth/main.conf'
 	'etc/dbus-1/system.d/bluetooth.conf')
 source=("$pkgname::git://git.kernel.org/pub/scm/bluetooth/bluez.git"
-	bluetooth.modprobe)
+	bluetooth.modprobe
+	externalhog.patch)
 md5sums=('SKIP'
-         '671c15e99d7154c2df987b71c5851b3d')
+         '671c15e99d7154c2df987b71c5851b3d'
+	 'SKIP')
 
 pkgver() {
   cd $pkgname
@@ -57,6 +59,7 @@ build() {
     --enable-experimental \
     --enable-manpages \
     --enable-library # this is deprecated
+  patch -p1 < $startdir/externalhog.patch
   make
 }
   
