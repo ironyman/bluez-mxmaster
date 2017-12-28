@@ -2,7 +2,7 @@
 # Maintainer: Swift Geek
 pkgname=bluez-git
 _pkgname=bluez
-pkgver=5.48.r0.g0d1e3b9c5
+pkgver=5.47.r0.gd139fd866
 pkgrel=1
 epoch=1
 pkgdesc="Libraries and tools for the Bluetooth protocol stack"
@@ -30,7 +30,7 @@ provides=($_pkgname
 	  $_pkgname-plugins)
 backup=('etc/bluetooth/main.conf'
 	'etc/dbus-1/system.d/bluetooth.conf')
-source=("$pkgname::git://git.kernel.org/pub/scm/bluetooth/bluez.git"
+source=("$pkgname::git://git.kernel.org/pub/scm/bluetooth/bluez.git#tag=5.47"
 	bluetooth.modprobe
 	externalhog.patch)
 md5sums=('SKIP'
